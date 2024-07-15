@@ -12,6 +12,7 @@ class MainController extends BaseController
 	}
 	public function index()
 	{
+		$this->data['page']['title'] = "Awards 2024" . " • " . APP_NAME;
 		$this->load->main_view('index', $this->data);
 	}
 }

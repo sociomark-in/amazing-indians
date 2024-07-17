@@ -1,32 +1,333 @@
+@import url("../fonts/helvetica-neue-webfont/style.css");
+
 $logo-height: 80px;
+$color-purple: #2f1c6b;
+$color-pink: #d700d0;
+$color-gold: gold;
+$color-white: #efedf7;
+$color-black: #1c1c1c;
+
+$colors: (
+	"purple": $color-purple,
+	"pink": $color-pink,
+	"gold": $color-gold,
+	"white": $color-white,
+	"black": $color-black,
+);
+
+@font-face {
+	font-family: "AcclaimExtrabold";
+	font-weight: 700;
+	src: url("../fonts/acclaimextrabold-2.eot") format("embedded-opentype"),
+		url("../fonts/acclaimextrabold-2.woff") format("woff"),
+		url("../fonts/acclaimextrabold-2.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Gobold";
+	src: url("../fonts/gobold.otf");
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: lighten($color-black, 10);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: rgba($color-pink, 1);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: rgba($color-gold, 1);
+}
+
+::selection {
+	color: $color-black;
+	background: $color-gold;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+body {
+	background: linear-gradient(-90deg, $color-pink -50%, $color-purple 20%);
+	color: $color-white;
+}
+main {
+	background: url("../media/backgrounds/background.gif") no-repeat,
+		linear-gradient(-90deg, $color-pink -50%, $color-purple 20%);
+	background-attachment: fixed;
+	background-blend-mode: overlay;
+	cursor: url("../media/images/icons/cursor-sm.png"), auto !important;
+}
+h1 {
+	font-weight: 700;
+}
+h1,
+h2,
+h3 {
+	font-family: "AcclaimExtrabold";
+	text-transform: uppercase;
+	font-weight: 700;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.interactable {
+	cursor: pointer;
+}
+
+form {
+	.form-control{
+		padding: 0.5rem 1rem;
+		border-radius: 0;
+	}
+	.form-check-input{
+		&:checked {
+			background-color: $color-pink;
+			border-color: $color-pink;
+		}
+		&:focus {
+			border-color: mix($color-white, $color-pink, 50);
+			outline: 0;
+			box-shadow: 0 0 0 0.25rem rgba($color-pink, 0.25);
+		}
+	}
+}
 .navbar {
 	position: sticky;
-	// background-color: $color-white;
+	background-color: $color-black;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 999;
+	.navbar-nav {
+		.nav-item {
+			.nav-link {
+				color: $color-white;
+				font-size: 1.2rem;
+			}
+		}
+	}
 	.navbar-toggler {
 		//   --bs-navbar-toggler-border-color: #{$color-leaf-green};
 		//   --bs-border-width: 3px;
 		//   --bs-navbar-toggler-border-radius: 0.5rem;
 	}
 }
-.fullscreen{
+.btn {
+	&.btn-main {
+		position: relative;
+		&::before {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 3px;
+			background-color: var(--bs-btn-style-color);
+			left: -0.65rem;
+			top: 0;
+		}
+		&::after {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 3px;
+			background-color: var(--bs-btn-style-color);
+			right: -0.65rem;
+			top: 0;
+		}
+	}
+	&.btn-yt-live {
+		--bs-btn-color: #fff;
+		--bs-btn-bg: red;
+		--bs-btn-border-color: red;
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-bg: red;
+		--bs-btn-hover-border-color: red;
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #fff;
+		--bs-btn-active-bg: red;
+		--bs-btn-active-border-color: red;
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+		--bs-btn-disabled-color: #fff;
+		--bs-btn-disabled-bg: red;
+		--bs-btn-disabled-border-color: red;
+	}
+	&.btn-pink {
+		--bs-btn-color: #fff;
+		--bs-btn-style-color: #fff;
+		--bs-btn-bg: #{$color-pink};
+		--bs-btn-border-color: #{$color-pink};
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-bg: #{$color-pink};
+		--bs-btn-hover-border-color: #{$color-pink};
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #fff;
+		--bs-btn-active-bg: #{$color-pink};
+		--bs-btn-active-border-color: #{$color-pink};
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+		--bs-btn-disabled-color: #fff;
+		--bs-btn-disabled-bg: #{$color-pink};
+		--bs-btn-disabled-border-color: #{$color-pink};
+		&.btn-hover-gold {
+			--bs-btn-hover-color: #{$color-black};
+			--bs-btn-hover-bg: #{$color-gold};
+			--bs-btn-hover-border-color: #{$color-gold};
+			--bs-btn-focus-shadow-rgb: 49, 132, 253;
+			--bs-btn-active-color: #{$color-black};
+			--bs-btn-active-bg: #{$color-gold};
+			--bs-btn-active-border-color: #{$color-gold};
+			--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+		}
+	}
+	&.btn-purple {
+		--bs-btn-color: #fff;
+		--bs-btn-style-color: #{$color-gold};
+		--bs-btn-bg: #{$color-purple};
+		--bs-btn-border-color: #{$color-purple};
+		--bs-btn-hover-color: #fff;
+		--bs-btn-hover-bg: #{$color-purple};
+		--bs-btn-hover-border-color: #{$color-purple};
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #fff;
+		--bs-btn-active-bg: #{$color-purple};
+		--bs-btn-active-border-color: #{$color-purple};
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+		--bs-btn-disabled-color: #fff;
+		--bs-btn-disabled-bg: #{$color-purple};
+		--bs-btn-disabled-border-color: #{$color-purple};
+	}
+	border-radius: 0;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+}
+.dropdown-menu {
+	--bs-dropdown-link-active-bg: #{$color-pink};
+}
+.card-plain {
+	border: 3px solid $color-gold;
+	padding: 0.5rem;
+	border-radius: 1rem;
+	color: $color-black;
+	.card-body {
+		padding: 1rem;
+		background-color: $color-white;
+		border-radius: 0.5rem;
+	}
+}
+
+.footer {
+	background-color: $color-black;
+}
+.fullscreen {
 	height: calc(100vh - $logo-height);
 	width: 100%;
 }
 .text-lg {
 	font-size: calc(max(2.9vmin, 1rem));
-  }
+}
+.text-style-theme {
+	font-family: "AcclaimExtrabold";
+	text-transform: uppercase;
+}
+.text-muted {
+	color: inherit !important;
+	opacity: 0.5;
+}
+
+@each $class, $color in $colors {
+	.text-#{$class} {
+		color: $color !important;
+	}
+}
+
 .section {
 	padding: calc(max(5%, 2rem)) 0;
 }
 .section-title {
+	width: fit-content;
 	h2 {
-	  font-size: 2.7rem;
+		width: fit-content;
+		font-size: calc(max(2.5rem, 6vmin));
 	}
-  }
+	p {
+		font-family: "AcclaimExtrabold";
+		text-transform: uppercase;
+		font-weight: 700;
+		position: relative;
+		margin: 0;
+		padding-left: 4.5rem;
+		font-size: 1.2rem;
+		color: $color-gold;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			width: 4rem;
+			height: 1px;
+			background-color: $color-gold;
+		}
+	}
+}
+.page-title {
+	width: fit-content;
+	h1 {
+		width: fit-content;
+		font-size: calc(max(3rem, 10vmin));
+	}
+	p {
+		font-family: "AcclaimExtrabold";
+		text-transform: uppercase;
+		font-weight: 700;
+		position: relative;
+		margin: 0;
+		padding-left: 4.5rem;
+		font-size: 1.2rem;
+		color: $color-gold;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+			width: 4rem;
+			height: 1px;
+			background-color: $color-gold;
+		}
+	}
+}
+.tile {
+	border: 3px solid transparent;
+	padding: 0.25rem;
+	display: block;
+	border-radius: 1.2rem;
+	&:hover {
+		border-color: $color-pink;
+	}
+}
+.speaker-tile {
+	h5 {
+		font-size: 1.2rem;
+	}
+	p {
+		font-size: 0.8rem;
+	}
+}
 .gallery-masonry {
 	width: 100%;
 	columns: 2;
@@ -38,6 +339,7 @@ $logo-height: 80px;
 		width: 100%;
 		overflow: hidden;
 		border-radius: 1rem;
+		margin-bottom: 0;
 	}
 }
 @media screen and (min-width: 512px) {
@@ -55,24 +357,49 @@ $logo-height: 80px;
 		columns: 5;
 	}
 }
-
-.hero-slide{
-	background: url('https://placehold.co/1920x1080') no-repeat;
+.animated-logo {
+	position: relative;
+	&::after {
+		content: "";
+		position: absolute;
+		width: 17%;
+		aspect-ratio: 1;
+		left: 0;
+		top: 0;
+		background: url("../media/logos/chakri.png") no-repeat;
+		background-position: center;
+		background-size: contain;
+		animation: spin 8.5s linear infinite;
+	}
+}
+h2 {
+	&.hero-text {
+		text-align: center;
+		font-family: "Gobold";
+		font-weight: 400;
+		font-size: 2.5rem;
+	}
+}
+.hero-slide {
+	background: url("https://placehold.co/1920x1080") no-repeat;
 	background-position: center;
 	height: calc(100vh - $logo-height);
 	width: 100%;
 	overflow: hidden;
 	padding: calc(max(7%, 2rem)) 0;
 	position: relative;
-	.element{
+	.element {
 		position: absolute;
 		z-index: 0;
 		left: 0;
 		top: 0;
 		width: calc(min(50%, 400px));
 	}
-	.media-content{
+	.media-content {
 		position: relative;
 		z-index: 1;
+	}
+	.text-content {
+		margin-bottom: 2rem;
 	}
 }

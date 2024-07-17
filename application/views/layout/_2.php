@@ -1,5 +1,5 @@
 <!-- partial:partials/_footer.html -->
-<?php $this->load->view('components/theme/partials/_footer'); ?>
+<?php //$this->load->view('components/theme/partials/_footer'); ?>
 <!-- partial -->
 
 </div>

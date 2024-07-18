@@ -54,6 +54,7 @@ $route['past-seasons/(:any)'] = 'SeasonsController/single/$1';
 $route['register-now'] = 'RegistrationsController/register';
 $route['terms/(:any)'] = 'TermsController/single/$1';
 
+$route['api/v2/category/get_single'] = 'api/CategoriesAPIController/get_single';
 $route['api/v2/registration/new'] = 'api/RegistrationsAPIController/new';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

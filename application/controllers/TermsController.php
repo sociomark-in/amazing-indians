@@ -8,16 +8,19 @@ class TermsController extends BaseController
 	{
 		parent::__construct();
 	}
-	
-	public function single($slug){
+
+	public function single($slug)
+	{
+		$this->load->model('data/CategoriesModel');
+		$this->data['page']['categories'] = json_decode($this->CategoriesModel->get(), true);
 		switch ($slug) {
 			case 'eligibility-criteria':
-				echo "New View";
+				$this->load->main_view('misc/terms', $this->data);
 				break;
 			case 'rules-and-regulations':
-				echo "New View";
+				$this->load->main_view('misc/terms', $this->data);
 				break;
-			
+
 			default:
 				show_404();
 				break;

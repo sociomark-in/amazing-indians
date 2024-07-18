@@ -3,7 +3,7 @@
 $logo-height: 80px;
 $color-purple: #2f1c6b;
 $color-pink: #d700d0;
-$color-gold: gold;
+$color-gold: #ffae00;
 $color-white: #efedf7;
 $color-black: #1c1c1c;
 
@@ -62,6 +62,7 @@ $colors: (
 }
 
 body {
+	font-family: "Poppins", sans-serif;
 	background: linear-gradient(-90deg, $color-pink -50%, $color-purple 20%);
 	color: $color-white;
 }
@@ -91,22 +92,28 @@ a {
 }
 
 form {
-	.form-control{
+	.form-control {
 		padding: 0.5rem 1rem;
 		border-radius: 0;
 	}
-	.form-check-input{
+	.form-check-input {
 		&:checked {
 			background-color: $color-pink;
 			border-color: $color-pink;
 		}
 		&:focus {
-			border-color: mix($color-white, $color-pink, 50);
+			border-color: mix($color-white, $color-pink, 50%);
 			outline: 0;
 			box-shadow: 0 0 0 0.25rem rgba($color-pink, 0.25);
 		}
 	}
+	label {
+		&.error {
+			color: $color-gold;
+		}
+	}
 }
+
 .navbar {
 	position: sticky;
 	background-color: $color-black;
@@ -117,15 +124,21 @@ form {
 	.navbar-nav {
 		.nav-item {
 			.nav-link {
+				// font-family: "AcclaimExtrabold";
+				text-transform: uppercase;
 				color: $color-white;
 				font-size: 1.2rem;
+				font-weight: 600;
 			}
 		}
 	}
 	.navbar-toggler {
-		//   --bs-navbar-toggler-border-color: #{$color-leaf-green};
-		//   --bs-border-width: 3px;
-		//   --bs-navbar-toggler-border-radius: 0.5rem;
+		--bs-navbar-toggler-border-color: #{$color-white};
+		--bs-border-width: 3px;
+		--bs-navbar-toggler-border-radius: 0.5rem;
+		.navbar-toggler-icon {
+			filter: brightness(10);
+		}
 	}
 }
 .btn {
@@ -182,16 +195,6 @@ form {
 		--bs-btn-disabled-color: #fff;
 		--bs-btn-disabled-bg: #{$color-pink};
 		--bs-btn-disabled-border-color: #{$color-pink};
-		&.btn-hover-gold {
-			--bs-btn-hover-color: #{$color-black};
-			--bs-btn-hover-bg: #{$color-gold};
-			--bs-btn-hover-border-color: #{$color-gold};
-			--bs-btn-focus-shadow-rgb: 49, 132, 253;
-			--bs-btn-active-color: #{$color-black};
-			--bs-btn-active-bg: #{$color-gold};
-			--bs-btn-active-border-color: #{$color-gold};
-			--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
-		}
 	}
 	&.btn-purple {
 		--bs-btn-color: #fff;
@@ -210,12 +213,118 @@ form {
 		--bs-btn-disabled-bg: #{$color-purple};
 		--bs-btn-disabled-border-color: #{$color-purple};
 	}
+	&.btn-gold {
+		--bs-btn-color: #{$color-black};
+		--bs-btn-style-color: #{$color-gold};
+		--bs-btn-bg: #{$color-gold};
+		--bs-btn-border-color: #{$color-gold};
+		--bs-btn-hover-color: #{$color-black};
+		--bs-btn-hover-bg: #{$color-gold};
+		--bs-btn-hover-border-color: #{$color-gold};
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #{$color-black};
+		--bs-btn-active-bg: #{$color-gold};
+		--bs-btn-active-border-color: #{$color-gold};
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+		--bs-btn-disabled-color: #{$color-black};
+		--bs-btn-disabled-bg: #{$color-gold};
+		--bs-btn-disabled-border-color: #{$color-gold};
+	}
+	&.btn-hover-gold {
+		--bs-btn-hover-color: #{$color-black};
+		--bs-btn-hover-bg: #{$color-gold};
+		--bs-btn-hover-border-color: #{$color-gold};
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #{$color-black};
+		--bs-btn-active-bg: #{$color-gold};
+		--bs-btn-active-border-color: #{$color-gold};
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+	}
+	&.btn-hover-white {
+		--bs-btn-hover-color: #{$color-black};
+		--bs-btn-hover-bg: #{$color-white};
+		--bs-btn-hover-border-color: #{$color-white};
+		--bs-btn-focus-shadow-rgb: 49, 132, 253;
+		--bs-btn-active-color: #{$color-black};
+		--bs-btn-active-bg: #{$color-white};
+		--bs-btn-active-border-color: #{$color-white};
+		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
+	}
 	border-radius: 0;
 	padding: 0.5rem 1rem;
 	font-weight: 500;
 }
-.dropdown-menu {
-	--bs-dropdown-link-active-bg: #{$color-pink};
+.modal {
+	color: $color-black;
+}
+
+.hero-icon-btn {
+	border-radius: 3rem;
+	overflow: hidden;
+	font-size: 1.2rem;
+	display: flex;
+	padding-left: 1rem;
+	gap: 1rem;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+	&::after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		right: 0;
+		top: 0;
+		transition: all 0.5s ease-in-out;
+		transform: translateX(100%);
+	}
+	&:hover {
+		&::after {
+			transform: translateX(0%);
+		}
+	}
+	width: fit-content;
+	@each $class, $color in $colors {
+		&.btn-#{$class} {
+			.icon {
+				background-color: $color;
+				&::after {
+					background-color: $color;
+				}
+			}
+			&:hover {
+				&::after {
+					z-index: -1;
+					background-color: $color;
+					transform: translateX(0%);
+				}
+			}
+		}
+		.icon {
+			font-size: 1.5rem;
+			width: 3rem;
+			aspect-ratio: 1;
+			display: grid;
+			place-items: center;
+			border-radius: 3rem;
+		}
+	}
+}
+.dropdown {
+	.dropdown-toggle::after {
+		color: $color-pink;
+	}
+	.dropdown-toggle.show::after {
+		color: $color-gold;
+	}
+	.dropdown-menu {
+		--bs-dropdown-link-active-bg: #{$color-pink};
+		border-radius: 0;
+		&[data-bs-popper] {
+			top: calc(100% + 0.8rem);
+		}
+	}
 }
 .card-plain {
 	border: 3px solid $color-gold;
@@ -227,6 +336,77 @@ form {
 		background-color: $color-white;
 		border-radius: 0.5rem;
 	}
+	&.category-tile{
+		color: $color-white;
+		padding: 0;
+		border: 3px solid transparent;
+		&:hover{
+			border-color: $color-gold;
+		}
+		.icon{
+			width: 100px;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			overflow: hidden;
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.card-body{
+			background-color: rgba($color-black, $alpha: 0.4);
+		}
+	}
+}
+.scrollTo {
+	position: fixed;
+	z-index: 99;
+	bottom: 1rem;
+	right: 1rem;
+	background-color: $color-pink;
+	border-radius: 3rem;
+	padding-left: 1rem;
+	#scrollToTop {
+		width: 3rem;
+		aspect-ratio: 1;
+		display: block;
+		padding: 0.5rem;
+	}
+	#scrollToTop img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.post-content {
+	a {
+		color: $color-gold;
+	}
+	&.misc {
+		font-size: 0.9rem;
+		ol {
+			margin-bottom: 1rem;
+			li {
+				margin-bottom: 0.5rem;
+			}
+		}
+		table {
+			width: 100%;
+			margin-bottom: 1rem;
+		}
+		table,
+		th,
+		td {
+			border: 1px solid $color-white;
+			border-collapse: collapse;
+		}
+		th,
+		td {
+			padding: 0.4rem 0.8rem;
+		}
+	}
 }
 
 .footer {
@@ -237,7 +417,7 @@ form {
 	width: 100%;
 }
 .text-lg {
-	font-size: calc(max(2.9vmin, 1rem));
+	font-size: calc(max(2.9vmin, 1rem)) !important;
 }
 .text-style-theme {
 	font-family: "AcclaimExtrabold";
@@ -251,6 +431,9 @@ form {
 @each $class, $color in $colors {
 	.text-#{$class} {
 		color: $color !important;
+	}
+	.bg-#{$class} {
+		background-color: $color !important;
 	}
 }
 
@@ -321,11 +504,49 @@ form {
 	}
 }
 .speaker-tile {
+	display: block;
+	padding-bottom: 0.5rem;
+	.image {
+		position: relative;
+		border-radius: 1rem;
+		overflow: hidden;
+		&::after {
+			content: "";
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 40%;
+			background-color: $color-white;
+			clip-path: polygon(0 30%, 0% 100%, 100% 100%);
+			left: 0;
+			bottom: 0;
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			width: 100%;
+			height: 60%;
+			background: linear-gradient(197deg, $color-gold 59%, #ff3100 100%);
+			clip-path: polygon(100% 30%, 0% 100%, 100% 100%);
+			left: 0;
+			bottom: 0;
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+		}
+	}
+	&.interactable {
+		&:hover {
+			box-shadow: 0 0.25rem 0 0 $color-pink;
+		}
+	}
 	h5 {
 		font-size: 1.2rem;
 	}
 	p {
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 }
 .gallery-masonry {

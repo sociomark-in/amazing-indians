@@ -2,7 +2,7 @@
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <!-- Plugin: TypewriterJS -->
 <main>
-	<section>
+	<section class="d-none">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
 				<?php for ($i = 0; $i < 5; $i++) : ?>
@@ -69,22 +69,24 @@
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xl-4 col-lg-6 col-md-8 col-12">
-					<div class="media-content py-4">
+					<div class="media-content py-4" data-aos="fade-right">
 						<div class="animated-logo">
-							<div class="mb-3">
-								<img class="w-100" src="<?= base_url("assets/media/logos/") ?>main.png" alt="Amazing Indians 2024">
+							<div class="mb-4">
+								<img class="w-100" src="<?= base_url("assets/media/logos/") ?>main2.png" alt="Amazing Indians 2024">
 							</div>
 							<div class="">
 								<h2 class="hero-text" id="heroText"></h2>
 								<script>
-									new Typewriter('#heroText', {cursor: ''}).typeString('24 August | New Delhi').start();
+									new Typewriter('#heroText', {
+										cursor: ''
+									}).typeString('24 August | New Delhi').start();
 								</script>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="offset-xl-1 col-xl-7 col-lg-6 col-12">
-					<div class="ratio ratio-16x9">
+					<div class="ratio ratio-16x9" data-aos="fade-left" data-aos-delay="100">
 						<iframe class="" src="https://www.youtube.com/embed/_w_86AAx0gM?si=w_kL2nWrhLoYPCwF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 					</div>
 				</div>
@@ -93,31 +95,26 @@
 	</section>
 	<section id="about" class="section">
 		<div class="container">
-			<div class="row flex-row-reverse align-items-center">
-				<div class="col-xl-5 col-md-6 col-12">
+			<div class="row">
+				<!-- <div class="row flex-row-reverse align-items-center"> -->
+				<!-- <div class="col-xl-5 col-md-6 col-12">
 					<div class="media-content">
-						<div class="wrap">
-							<picture>
-								<source srcset="https://placehold.co/800x1200/webp" type="image/webp">
-								<source srcset="https://placehold.co/800x1200/jpg" type="image/jpg">
-								<img class="w-100" src="https://placehold.co/800x1200/jpg" alt="" loading="lazy">
-							</picture>
-							<!-- <img class="w-100" src="<?= base_url("assets/media/trophy.png") ?>" alt="" loading="lazy"> -->
+						<div class="wrap" data-aos="zoom-in" data-aos-delay="100">
+							<img class="w-100" src="<?= base_url("assets/media/images/AI_800x1200.jpg") ?>" alt="" loading="lazy">
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-7 col-md-6 col-12">
+				</div> -->
+				<div class="col-12">
 					<div class="text-content">
 						<div class="title section-title">
 							<p class="">Amazing Indians</p>
-							<h2 class="">Common By Appearance <br> Uncommon By deeds!</h2>
+							<h2 class="" data-aos="fade-right">Common By Appearance <br> Uncommon By deeds!</h2>
 						</div>
 						<div class="desc">
-							<p class="text-lg">
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ex ea repellendus saepe tempore! Cum, dolore eligendi officia iusto enim doloremque! Fugiat laborum natus impedit incidunt eius modi quasi quaerat cum laboriosam voluptatem placeat vel reiciendis aut, fugit quod provident?
-							</p>
-							<p class="text-lg">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime, fuga atque eligendi corporis cumque repellat aspernatur libero aliquid recusandae temporibus!
+							<p class="text-lg" data-aos="fade-up">
+								Amazing, uncommon deeds should get more recognition than just becoming reshared posts on social media! After all these are real life tales of heroism, sacrifice, selflessness, generosity and compassion of Indian citizens who are changing the world by changing the world around them.
+								To honor such people who do remarkable deeds that impact the society positively, Times Now is all set to felicitate Amazing Indians of 2024, this August in New Delhi.
+								A celebration to acknowledge Indians who embody the qualities of compassion, dedication & spirit of selfless service for others.
 							</p>
 						</div>
 					</div>
@@ -134,24 +131,27 @@
 			<div class="row g-3">
 				<div class="col-12">
 					<div class="swiper categorySwiper">
-						<div class="swiper-wrapper">
-							<?php for ($i = 0; $i < 20; $i++) : ?>
-								<div class="swiper-slide interactable" data-category-id="<?= $i ?>">
-									<div class="card-plain">
+						<div class="swiper-wrapper mb-5 mb-md-0">
+							<?php foreach ($page['categories'] as $key => $category) : ?>
+								<div class="swiper-slide interactable" data-category-id="<?= $category['id'] ?>">
+									<div class="card-plain category-tile">
 										<div class="card-body">
-											<div class="row g-3 justify-content-center">
+											<div class="row g-3 justify-content-center align-items-center">
 												<div class="col-auto">
-													<img src="https://placehold.co/100x100" alt="">
+													<div class="icon">
+														<img src="<?= base_url('assets/media/images/icons/categories/') . $category['icon'] ?>" alt="<?= $category['name'] . " Icon" ?>">
+													</div>
 												</div>
-												<div class="col-12">
-													<h5 class="text-center">Lorem ipsum dolor sit. <?= $i ?></h5>
+												<div class="col">
+													<h5 class=""><?= $category['name'] ?></h5>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							<?php endfor ?>
+							<?php endforeach ?>
 						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
@@ -164,43 +164,257 @@
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						...
+						<p>
+
+						</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<a href="<?= base_url("register") ?>" class="btn btn-pink btn-hover-gold">Register Now</a>
+						<a href="<?= base_url("register-now") ?>" class="btn btn-pink btn-hover-gold">Register Now</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<script>
 			new Swiper(".categorySwiper", {
-				slidesPerView: 4,
+				slidesPerView: 1,
 				spaceBetween: 40,
-				grid: {
-					rows: 3,
-					fill: "row"
-				}
+				pagination: {
+					el: ".categorySwiper .swiper-pagination",
+					clickable: true
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+						grid: {
+							rows: 3,
+							fill: "row"
+						},
+					},
+					1024: {
+						slidesPerView: 2,
+						spaceBetween: 50,
+						grid: {
+							rows: 4,
+							fill: "row"
+						},
+					},
+					1400: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+						grid: {
+							rows: 4,
+							fill: "row"
+						},
+					},
+				},
 			})
 			$(".categorySwiper .swiper-slide").each((index, elem) => {
 				$(elem).on("click", () => {
 					$.ajax({
-						url: "<?= base_url() ?>",
+						url: "<?= base_url('api/v2/category/get_single') ?>",
 						method: "POST",
 						data: {
 							category: $(elem).data("category-id")
 						},
 						success: function(data) {
-							console.log($(elem).data("category-id"));
+							data = JSON.parse(data)[$(elem).data("category-id")];
 							$("#categoryPopModal").modal("show");
-							$("#categoryPopModalLabel").text($(elem).data("category-id"))
+							$("#categoryPopModalLabel").text(data.name)
+							$("#categoryPopModal .modal-body p").text(data.description)
 						}
 					})
 				})
 			})
 		</script>
 	</section>
-	<section id="gallery" class="section">
+	<section class="section d-none" id="pre_jury">
+		<div class="container">
+			<div class="section-title mb-3 mb-md-5">
+				<p class="">Amazing Indians</p>
+				<h2>Pre-Jury</h2>
+			</div>
+			<div class="">
+				<div class="swiper preJurySwiper">
+					<div class="swiper-wrapper">
+						<?php for ($i = 0; $i < 20; $i++) : ?>
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>person.png" alt="Speaker">
+									</div>
+									<div class="text-content p-3 py-0">
+										<h5 class="text-gold">Lorem ipsum dolor sit.</h5>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim?</p>
+									</div>
+								</div>
+							</div>
+						<?php endfor ?>
+					</div>
+				</div>
+				<script>
+					new Swiper(".preJurySwiper", {
+						slidesPerView: 1,
+						spaceBetween: 20,
+						autoplay: {
+							enable: true,
+							duration: 400
+						},
+						breakpoints: {
+							640: {
+								slidesPerView: 2,
+								spaceBetween: 20,
+							},
+							1024: {
+								slidesPerView: 3,
+								spaceBetween: 50,
+							},
+							1400: {
+								slidesPerView: 5,
+								spaceBetween: 30,
+							},
+						},
+					})
+				</script>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="grand_jury">
+		<div class="container">
+			<div class="section-title mb-3 mb-md-5">
+				<p class="">Amazing Indians</p>
+				<h2>Grand Jury</h2>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<div class="swiper grandJurySwiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Sanjeev_Sanyal.png" alt="Speaker">
+									</div>
+									<div class="text-content text-center p-3 py-0">
+										<h4 class="text-gold">Sanjeev Sanyal</h4>
+										<p>Member, Economic Advisory Council to the Prime Minister</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Prasoon_Joshi.png" alt="Speaker">
+									</div>
+									<div class="text-content text-center p-3 py-0">
+										<h4 class="text-gold">Prasoon Joshi</h4>
+										<p>Chairman, McCann Worldgroup Asia Pacific and CEO & COO, McCann Worldgroup India</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Gen_Naravane.png" alt="Speaker">
+									</div>
+									<div class="text-content text-center p-3 py-0">
+										<h4 class="text-gold">General MM Naravane</h4>
+										<p>PVSM, AVSM, SM, VSM (RETD), Former Chief Of The Army Staff, Indian Army</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Rajeev_Chandrasekhar.png" alt="Speaker">
+									</div>
+									<div class="text-content text-center p-3 py-0">
+										<h4 class="text-gold">Rajeev Chandrasekhar</h4>
+										<p>BJP Leader, Former MOS of Electronics & IT and Skill Development and Entrepreneurship</p>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide mb-2">
+								<div class="speaker-tile">
+									<div class="image mb-3">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Renu_Sud.png" alt="Speaker">
+									</div>
+									<div class="text-content text-center p-3 py-0">
+										<h4 class="text-gold">Renu Sud Karnad</h4>
+										<p>Chairperson, GlaxoSmithKline & Board Member, HDFC Bank</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						new Swiper(".grandJurySwiper", {
+							slidesPerView: 1,
+							spaceBetween: 20,
+							loop: true,
+							autoplay: {
+								enable: true,
+								duration: 400
+							},
+							breakpoints: {
+								640: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								1024: {
+									slidesPerView: 3,
+									spaceBetween: 30,
+								},
+								1400: {
+									slidesPerView: 4,
+									spaceBetween: 10,
+								},
+							}
+						})
+					</script>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="quotes">
+		<div class="container">
+			<div class="section-title mb-3 mb-md-5">
+				<p class="">Amazing Indians</p>
+				<h2>Words That Matter</h2>
+			</div>
+			<div class="">
+				<div class="swiper quoteSwiper">
+					<div class="swiper-wrapper">
+						<?php foreach ($page['quotes'] as $key => $quote) : ?>
+							<div class="swiper-slide mb-2">
+								<div class="image mb-3">
+									<img class="w-100" src="<?= base_url('assets/media/images/quotes/') . $quote ?>" alt="Speaker">
+								</div>
+							</div>
+						<?php endforeach ?>
+					</div>
+				</div>
+				<script>
+					new Swiper(".quoteSwiper", {
+						slidesPerView: 1,
+						spaceBetween: 20,
+						autoplay: {
+							enable: true,
+							duration: 400
+						},
+						breakpoints: {
+							1024: {
+								slidesPerView: 2,
+								spaceBetween: 50,
+
+							},
+						},
+					})
+				</script>
+			</div>
+		</div>
+	</section>
+	<section id="gallery" class="section d-none">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>
@@ -242,7 +456,7 @@
 			});
 		</script>
 	</section>
-	<section id="articles" class="section">
+	<section id="articles" class="section d-none">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>

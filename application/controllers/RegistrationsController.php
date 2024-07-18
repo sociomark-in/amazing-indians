@@ -8,6 +8,7 @@ class RegistrationsController extends BaseController
 	public function register()
 	{
 		$this->data['page']['title'] = "Register Now" . " • " . APP_NAME;
-		$this->load->main_view('registrations/index', $this->data);
+		// $this->load->main_view('registrations/index', $this->data);
+		$this->load->main_view('registrations/index2', $this->data);
 	}
 }

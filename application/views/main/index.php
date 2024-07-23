@@ -490,8 +490,8 @@
 											<h5 class="text-gold"><?= $article['name'] ?></h5>
 										</div>
 										<div class="row">
-											<div class="col-auto"><i class="fa-solid fa-award me-2"></i><?= $article['category'] ?></div>
-											<div class="col-auto"><i class="fa-solid fa-user me-2"></i><?= $article['author'] ?></div>
+											<div class="col-xl-auto col-12"><i class="fa-solid fa-award me-2"></i><?= $article['category'] ?></div>
+											<div class="col-xl-auto col-12"><i class="fa-solid fa-user me-2"></i><?= $article['author'] ?></div>
 										</div>
 									</div>
 								</a>
@@ -503,7 +503,7 @@
 				</div>
 				<script>
 					new Swiper(".articleSwiper", {
-						slidesPerView: 1,
+						slidesPerView: 1.1,
 						spaceBetween: 20,
 						navigation: {
 							nextEl: ".swiper-button-next",
@@ -511,15 +511,15 @@
 						},
 						breakpoints: {
 							640: {
-								slidesPerView: 2,
+								slidesPerView: 2.25,
 								spaceBetween: 20,
 							},
 							1024: {
-								slidesPerView: 2,
+								slidesPerView: 2.3,
 								spaceBetween: 50,
 							},
 							1400: {
-								slidesPerView: 3,
+								slidesPerView: 3.2,
 								spaceBetween: 30,
 							},
 						}

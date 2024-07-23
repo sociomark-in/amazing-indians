@@ -463,7 +463,7 @@
 			});
 		</script>
 	</section>
-	<section id="articles pb-0" class="section">
+	<section id="articles" class="section pb-0">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>
@@ -480,7 +480,7 @@
 											<picture>
 												<!-- <source srcset="https://placehold.co/1280x720/webp" type="image/webp">
 												<source srcset="https://placehold.co/1280x720/jpg" type="image/jpg"> -->
-												<img class="w-100" src="<?= $article['thumb'] ??= "https://static.tnn.in/thumb/msid-88386381,width-720,height-400,resizemode-75/88386381.jpg?quality=100" ?>" alt="" loading="lazy">
+												<img class="w-100" src="<?= $article['thumb'] ?>" alt="" loading="lazy">
 											</picture>
 											<figcaption></figcaption>
 										</figure>

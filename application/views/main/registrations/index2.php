@@ -10,25 +10,22 @@
 					</div>
 					<div class="mb-3">
 						<!-- <a href="<?= base_url() ?>" class="btn btn-pink btn-hover-gold">Read Our Terms & Conditions<i class="fa-solid fa-arrow-right ms-2"></i></a> -->
-						<a href="" class="btn btn-gold btn-hover-white"><i class="fa-regular fa-file-pdf me-2"></i>Download Terms & Conditions PDF</a>
+						<a href="<?= base_url("terms/terms-and-conditions") ?>" target="_blank" class="btn btn-gold btn-hover-white"><i class="fa-regular fa-file-pdf me-2"></i>Download Terms & Conditions PDF</a>
 					</div>
 					<div class="form-check mb-3">
 						<input class="form-check-input" name="concent" type="checkbox" id="flexCheckDefault" required>
 						<label class="form-check-label" for="flexCheckDefault">
 							<p>
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed ex eveniet nostrum temporibus nemo maxime vel quibusdam error voluptas, perspiciatis nisi optio doloremque, reprehenderit ipsum corporis magni quod blanditiis natus?
+								I hereby accept that I have read and understood all the <a href="<?= base_url("terms/terms-and-conditions") ?>" class="text-gold" target="_blank">Terms & Conditions</a> for The Amazing Indians Awards 2024. By participating in the Awards, I agree to adhere to and be bound by these <a href="<?= base_url("terms/terms-and-conditions") ?>" class="text-gold" target="_blank">Terms & Conditions</a>.
 							</p>
-							<p>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt corrupti dolor provident sed voluptatem libero doloremque! Inventore perferendis ipsa repudiandae!
-							</p>
-							<p>Read complete <a href="<?= base_url("terms/eligibility-criteria") ?>" class="text-gold">Eligibility Criteria</a> and <a href="<?= base_url("terms/rules-and-regulations") ?>" class="text-gold">Rule and Regulations</a> here!</p>
+							<p>Read complete <a href="<?= base_url("terms/eligibility-criteria") ?>" class="text-gold">Eligibility Criteria</a> here!</p>
 						</label>
 					</div>
 					<div class="">
 						<div class="mb-2">
 							<h3>Practice and Improvise</h3>
 							<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. In libero nostrum enim soluta, sit alias veritatis necessitatibus earum odit. Placeat, enim eveniet quisquam perferendis repellendus ipsa nihil eos optio harum.
+								Please download the form by clicking <strong>Download Dummy Application</strong> and familiarise with the questions you will need to answer. Since it is a web based entry form, we recommend that you first fill in all the fields on the downloaded form and then paste into the web form once you sign in.
 							</p>
 						</div>
 						<button type="submit" class="btn btn-pink btn-hover-gold btn-lg me-2 disabled"><i class="fa-regular fa-file-word me-2"></i>Download Dummy Application</button>
@@ -54,13 +51,13 @@
 <script>
 	$(document).ready(function() {
 		$("#registerForm").validate({
-			rules:{
-				consent:"required"
+			rules: {
+				consent: "required"
 			},
-			messages:{
-				consent:  "Please accept the Terms and Conditions"
-			}, 
-			invalidHandler: function(){}
+			messages: {
+				consent: "Please accept the Terms and Conditions"
+			},
+			invalidHandler: function() {}
 		});
 		$("#flexCheckDefault").on('click', function() {
 			if (!$("#flexCheckDefault").is(':checked')) {

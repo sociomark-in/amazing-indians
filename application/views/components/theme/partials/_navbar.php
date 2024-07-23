@@ -17,26 +17,30 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?= base_url("#categories") ?>">Categories</a></li>
-						<li><a class="dropdown-item disabled" href="<?= base_url("terms/eligibility-criteria") ?>">Eligibility Criteria</a></li>
-						<li><a class="dropdown-item disabled" href="<?= base_url("terms/rules-and-regulations") ?>">Rules & Regulations</a></li>
+						<li><a class="dropdown-item" href="<?= base_url("terms/eligibility-criteria") ?>">Eligibility Criteria</a></li>
+						<!-- <li><a class="dropdown-item disabled" href="<?= base_url("terms/rules-and-regulations") ?>">Rules & Regulations</a></li> -->
+						<li><a class="dropdown-item" href="<?= base_url("terms/terms-and-conditions") ?>">Terms & Conditions</a></li>
 					</ul>
 				</li>
-				<li class="nav-item dropdown">
+				<!-- <li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						Jury
 					</a>
 					<ul class="dropdown-menu">
-						<!-- <li><a class="dropdown-item" href="<?= base_url("#pre_jury") ?>">Pre Jury</a></li> -->
+						<li><a class="dropdown-item" href="<?= base_url("#pre_jury") ?>">Pre Jury</a></li>
 						<li><a class="dropdown-item" href="<?= base_url("#grand_jury") ?>">Grand Jury</a></li>
 					</ul>
+				</li> -->
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url("#grand_jury") ?>">Jury</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= base_url("#quotes") ?>">Words That Matter</a>
+					<a class="nav-link" href="<?= base_url("#quotes") ?>">Inspirations</a>
 				</li>
 				<li class="nav-item d-none">
 					<a class="nav-link" href="<?= base_url("#gallery") ?>">Gallery</a>
 				</li>
-				<li class="nav-item d-none">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#articles") ?>">Articles</a>
 				</li>
 				<li class="nav-item dropdown d-none">
@@ -47,6 +51,9 @@
 						<li><a class="dropdown-item" href="<?= base_url("past-seasons/2023") ?>">Amazing Indians 2023</a></li>
 						<li><a class="dropdown-item" href="<?= base_url("past-seasons/2022") ?>">Amazing Indians 2022</a></li>
 					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="<?= base_url("#contact") ?>">Contact Us</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#partners") ?>">Partners</a>

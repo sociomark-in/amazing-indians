@@ -2,7 +2,7 @@
 <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 <!-- Plugin: TypewriterJS -->
 <main>
-	<section class="d-none">
+	<section class="d-none ">
 		<div class="swiper heroSwiper">
 			<div class="swiper-wrapper">
 				<?php for ($i = 0; $i < 5; $i++) : ?>
@@ -65,7 +65,7 @@
 			})
 		</script>
 	</section>
-	<section class="section" id="info">
+	<section class="section pb-0" id="info">
 		<div class="container">
 			<div class="row justify-content-center align-items-center">
 				<div class="col-xl-4 col-lg-6 col-md-8 col-12">
@@ -86,14 +86,17 @@
 					</div>
 				</div>
 				<div class="offset-xl-1 col-xl-7 col-lg-6 col-12">
-					<div class="ratio ratio-16x9" data-aos="fade-left" data-aos-delay="100">
+					<!-- <div class="ratio ratio-16x9" data-aos="fade-left" data-aos-delay="100">
 						<iframe class="" src="https://www.youtube.com/embed/_w_86AAx0gM?si=w_kL2nWrhLoYPCwF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					</div> -->
+					<div class="wrap" data-aos="zoom-in" data-aos-delay="100">
+						<img class="w-100" src="<?= base_url("assets/media/images/AI_1920x1080.jpg") ?>" alt="" loading="lazy">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="about" class="section">
+	<section id="about" class="section pb-0">
 		<div class="container">
 			<div class="row">
 				<!-- <div class="row flex-row-reverse align-items-center"> -->
@@ -112,8 +115,12 @@
 						</div>
 						<div class="desc">
 							<p class="text-lg" data-aos="fade-up">
-								Amazing, uncommon deeds should get more recognition than just becoming reshared posts on social media! After all these are real life tales of heroism, sacrifice, selflessness, generosity and compassion of Indian citizens who are changing the world by changing the world around them.
+								Amazing, uncommon deeds should get more recognition than just becoming reshared posts on social media! After all these are real life tales of heroism, sacrifice, selflessness, generosity and compassion of Indian citizens who are changing the world by changing the world around them. <br>
+							</p>
+							<p class="text-lg" data-aos="fade-up">
 								To honor such people who do remarkable deeds that impact the society positively, Times Now is all set to felicitate Amazing Indians of 2024, this August in New Delhi.
+							</p>
+							<p class="text-lg" data-aos="fade-up">
 								A celebration to acknowledge Indians who embody the qualities of compassion, dedication & spirit of selfless service for others.
 							</p>
 						</div>
@@ -122,7 +129,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" id="categories">
+	<section class="section pb-0" id="categories">
 		<div class="container">
 			<div class="title section-title mb-3 mb-md-4">
 				<p class="">Amazing Indians</p>
@@ -280,7 +287,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" id="grand_jury">
+	<section class="section pb-0" id="grand_jury">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>
@@ -337,7 +344,7 @@
 							<div class="swiper-slide mb-2">
 								<div class="speaker-tile">
 									<div class="image mb-3">
-										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Renu_Sud.png" alt="Speaker">
+										<img class="w-100" src="<?= base_url("assets/media/images/speakers/") ?>Renu_Sood.png" alt="Speaker">
 									</div>
 									<div class="text-content text-center p-3 py-0">
 										<h4 class="text-gold">Renu Sud Karnad</h4>
@@ -376,11 +383,11 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" id="quotes">
+	<section class="section pb-0" id="quotes">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>
-				<h2>Words That Matter</h2>
+				<h2>Words That Inspire</h2>
 			</div>
 			<div class="">
 				<div class="swiper quoteSwiper">
@@ -456,42 +463,113 @@
 			});
 		</script>
 	</section>
-	<section id="articles" class="section d-none">
+	<section id="articles pb-0" class="section">
 		<div class="container">
 			<div class="section-title mb-3 mb-md-5">
 				<p class="">Amazing Indians</p>
-				<h2>PR Articles</h2>
+				<h2>Articles</h2>
 			</div>
 			<div class="">
 				<div class="swiper articleSwiper">
 					<div class="swiper-wrapper gallery-masonry" id="galleryMasonry">
-						<?php for ($i = 0; $i < 20; $i++) : ?>
+						<?php foreach ($page['articles'] as $key => $article) : ?>
 							<div class="swiper-slide mb-2">
-								<a href="" class="article">
+								<a href="<?= $article['url'] ?>" class="article" target="_blank">
 									<div class="image mb-3">
 										<figure>
 											<picture>
-												<source srcset="https://placehold.co/1280x720/webp" type="image/webp">
-												<source srcset="https://placehold.co/1280x720/jpg" type="image/jpg">
-												<img class="w-100" src="https://placehold.co/1280x720/jpg" alt="" loading="lazy">
+												<!-- <source srcset="https://placehold.co/1280x720/webp" type="image/webp">
+												<source srcset="https://placehold.co/1280x720/jpg" type="image/jpg"> -->
+												<img class="w-100" src="<?= $article['thumb'] ??= "https://static.tnn.in/thumb/msid-88386381,width-720,height-400,resizemode-75/88386381.jpg?quality=100" ?>" alt="" loading="lazy">
 											</picture>
 											<figcaption></figcaption>
 										</figure>
 									</div>
 									<div class="text-content p-3 py-0">
-										<h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, enim?</h5>
+										<div class="">
+											<h5 class="text-gold"><?= $article['name'] ?></h5>
+										</div>
+										<div class="row">
+											<div class="col-auto"><i class="fa-solid fa-award me-2"></i><?= $article['category'] ?></div>
+											<div class="col-auto"><i class="fa-solid fa-user me-2"></i><?= $article['author'] ?></div>
+										</div>
 									</div>
 								</a>
 							</div>
-						<?php endfor ?>
+						<?php endforeach ?>
 					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
 				</div>
 				<script>
 					new Swiper(".articleSwiper", {
-						slidesPerView: 3,
+						slidesPerView: 1,
 						spaceBetween: 20,
+						navigation: {
+							nextEl: ".swiper-button-next",
+							prevEl: ".swiper-button-prev",
+						},
+						breakpoints: {
+							640: {
+								slidesPerView: 2,
+								spaceBetween: 20,
+							},
+							1024: {
+								slidesPerView: 2,
+								spaceBetween: 50,
+							},
+							1400: {
+								slidesPerView: 3,
+								spaceBetween: 30,
+							},
+						}
 					})
 				</script>
+			</div>
+		</div>
+	</section>
+	<section class="section" id="contact">
+		<div class="container">
+			<div class="section-title mb-3 mb-md-5">
+				<p class="">Amazing Indians</p>
+				<h2>Contact Us</h2>
+			</div>
+			<div class="row g-3">
+				<div class="col-lg-5 col-md-6 col-12">
+					<div class="card-plain category-tile">
+						<div class="card-body p-3">
+							<div class="row g-2 align-items-center">
+								<div class="col-sm-auto">
+									<div class="icon"><img src="<?= base_url('assets/media/images/icons/call.png') ?>" alt="" height="60"></div>
+								</div>
+								<div class="col-sm">
+									<h3>Call</h3>
+									<h5>
+										<a href="tel:+918669079150" class="text-gold">+91 866 907 9150</a> /
+										<a href="tel:+919650716790" class="text-gold">+91 965 071 6790</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-6 col-12">
+					<div class="card-plain category-tile">
+						<div class="card-body p-3">
+							<div class="row g-2 align-items-center">
+								<div class="col-sm-auto">
+									<div class="icon"><img src="<?= base_url('assets/media/images/icons/mail.png') ?>" alt="" height="60"></div>
+								</div>
+								<div class="col-sm">
+									<h3>Email</h3>
+									<h5>
+										<a href="mailto:response@theamazingindians.com" style="word-wrap: break-word;" class="text-gold">response@theamazingindians.com</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

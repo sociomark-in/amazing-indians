@@ -16,7 +16,7 @@ class RegistrationsAPIController extends BaseController
 	public function new() {
 		$this->request = $this->input->post();
 		if($this->LeadsModel->insert($this->request)){
-			redirect('https://forms.gle/g8frr5XQr9v31vvC7');
+			redirect(base_url('assets/uploads/dummy_application_form.docx'));
 		}
 	}
 }

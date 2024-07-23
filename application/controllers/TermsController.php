@@ -15,10 +15,15 @@ class TermsController extends BaseController
 		$this->data['page']['categories'] = json_decode($this->CategoriesModel->get(), true);
 		switch ($slug) {
 			case 'eligibility-criteria':
-				$this->load->main_view('misc/terms', $this->data);
+				// $this->load->main_view('misc/terms', $this->data);
+				redirect(base_url('assets/uploads/amazing-indians-2024-eligibility.docx'));
 				break;
 			case 'rules-and-regulations':
-				$this->load->main_view('misc/terms', $this->data);
+				// $this->load->main_view('misc/terms', $this->data);
+				break;
+			case 'terms-and-conditions':
+				redirect(base_url('assets/uploads/amazing-indians-2024-terms-conditions.pdf'));
+				// $this->load->main_view('misc/terms', $this->data);
 				break;
 
 			default:

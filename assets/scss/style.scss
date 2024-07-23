@@ -91,6 +91,30 @@ a {
 	cursor: pointer;
 }
 
+.swiper{
+	.swiper-button-next,
+	.swiper-button-prev{
+		top: 35%;
+		&::after{
+			content: '';
+			height: 2rem;
+			width: 2rem;
+			background-size: contain !important;
+			background-position: center !important;
+		}
+	}
+	.swiper-button-next{
+		&::after{
+			background: url("../media/images/icons/right.png") no-repeat;
+		}
+	}
+	.swiper-button-prev{
+		&::after{
+			background: url("../media/images/icons/left.png") no-repeat;
+		}
+	}
+}
+
 form {
 	.form-control {
 		padding: 0.5rem 1rem;
@@ -127,7 +151,6 @@ form {
 				// font-family: "AcclaimExtrabold";
 				text-transform: uppercase;
 				color: $color-white;
-				font-size: 1.2rem;
 				font-weight: 600;
 			}
 		}
@@ -141,6 +164,7 @@ form {
 		}
 	}
 }
+
 .btn {
 	&.btn-main {
 		position: relative;
@@ -598,6 +622,7 @@ h2 {
 		text-align: center;
 		font-family: "Gobold";
 		font-weight: 400;
+		// font-size: calc(max(, 2vw));
 		font-size: 2.5rem;
 	}
 }

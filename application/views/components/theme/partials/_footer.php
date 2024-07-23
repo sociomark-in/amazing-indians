@@ -7,8 +7,8 @@
 				</div>
 				<div class="row m-0 justify-content-center">
 					<div class="col-12">
-						<div class="partners-nav row g-3 justify-content-center justify-content-lg-around">
-							<div class="col-12 col-md-auto">
+						<div class="partners-nav row g-3 justify-content-center">
+							<div class="col-12 col-md-auto d-none">
 								<a class="nav-link text-dark text-center">
 									<p class="mb-3 text-uppercase">
 										<b>An Initiative By</b>

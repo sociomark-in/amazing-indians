@@ -79,7 +79,7 @@
 								<script>
 									new Typewriter('#heroText', {
 										cursor: ''
-									}).typeString('24 August | New Delhi').start();
+									}).typeString('Coming Soon | New Delhi').start();
 								</script>
 							</div>
 						</div>

@@ -13,7 +13,7 @@ class RegistrationsAPIController extends BaseController
 		$this->load->model('data/LeadsModel');
 	}
 
-	public function new() {
+	public function new_request() {
 		$this->request = $this->input->post();
 		if($this->LeadsModel->insert($this->request)){
 			redirect(base_url('assets/uploads/dummy_application_form.docx'));

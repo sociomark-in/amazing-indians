@@ -6,7 +6,7 @@ class LeadsModel extends CI_Model{
 		parent::__construct();	
 	}
 
-	public function insert($data) : bool {
+	public function insert($data) {
 		/* 
 		if($this->db->insert($this->table[''], $data)){
 			return true;

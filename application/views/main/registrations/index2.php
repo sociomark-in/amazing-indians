@@ -28,8 +28,8 @@
 								Please download the form by clicking <strong>Download Dummy Application</strong> and familiarise with the questions you will need to answer. Since it is a web based entry form, we recommend that you first fill in all the fields on the downloaded form and then paste into the web form once you sign in.
 							</p>
 						</div>
-						<button type="submit" class="btn btn-pink btn-hover-gold btn-lg me-2 disabled"><i class="fa-regular fa-file-word me-2"></i>Download Dummy Application</button>
-						<a id="redirectForm" href="https://forms.gle/g8frr5XQr9v31vvC7" target="_blank" class="btn btn-gold btn-hover-white btn-lg disabled">Nominate Now<i class="fa-solid fa-arrow-right ms-2"></i></a>
+						<button type="submit" class="btn btn-pink btn-hover-gold btn-lg me-2 disabled"><i class="fa-regular fa-file-word me-2"></i>Download Entry Form</button>
+						<a id="redirectForm" href="https://forms.gle/g8frr5XQr9v31vvC7" target="_blank" class="btn btn-gold btn-hover-white btn-lg disabled">Start Filling Entry<i class="fa-solid fa-arrow-right ms-2"></i></a>
 					</div>
 				</div>
 				<div class="col-xl-5 col-md-6 col-12">

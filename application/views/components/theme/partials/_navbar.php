@@ -13,7 +13,7 @@
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						Award Entry
+						The Awards
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="<?= base_url("#categories") ?>">Categories</a></li>
@@ -61,7 +61,7 @@
 			</ul>
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="btn btn-pink btn-hover-gold" href="<?= base_url('register-now') ?>">Nominate Now</a>
+					<a class="btn btn-pink btn-hover-gold" href="<?= base_url('register-now') ?>">Submit Entry</a>
 				</li>
 			</ul>
 		</div>

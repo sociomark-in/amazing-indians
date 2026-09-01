@@ -53,8 +53,13 @@ $route['default_controller'] = 'MainController';
 $route['past-seasons/(:any)'] = 'SeasonsController/single/$1';
 $route['register-now'] = 'RegistrationsController/register';
 $route['terms/(:any)'] = 'TermsController/single/$1';
+$route['thank-you'] = 'RegistrationsController/thank_you';
 
+$route['api/v2/data/get_states'] = 'api/StatesAPIController/get_all_states';
+$route['api/v2/data/get_city'] = 'api/StatesAPIController/get_cities_by_state';
+$route['api/v2/data/get_addresslines'] = 'api/StatesAPIController/get_addresslines';
 $route['api/v2/category/get_single'] = 'api/CategoriesAPIController/get_single';
-$route['api/v2/registration/new'] = 'api/RegistrationsAPIController/new_request';
+// $route['api/v2/registration/new'] = 'api/RegistrationsAPIController/new_request';
+$route['api/v2/registration/new'] = 'api/RegistrationsAPIController/new_registration';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

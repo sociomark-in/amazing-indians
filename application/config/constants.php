@@ -1,8 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-defined('APP_NAME') OR define('APP_NAME', 'Amazing Indians');
 
+/*
+|--------------------------------------------------------------------------
+| App Specific Constants
+|--------------------------------------------------------------------------
+|
+|
+*/
+defined('APP_NAME') OR define('APP_NAME', 'Amazing Indians');
+defined('SUBMISSION_START_DATE') OR define('SUBMISSION_START_DATE', "2025-07-01 09:00:00");
+defined('SUBMISSION_END_DATE') OR define('SUBMISSION_END_DATE', "2026-08-31 23:59:00");
+defined('AWARDS_START_DATE') OR define('AWARDS_START_DATE', "2025-08-11 09:00:00");
+defined('AWARDS_END_DATE') OR define('AWARDS_END_DATE', "2027-08-11 23:59:00");
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

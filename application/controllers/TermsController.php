@@ -15,15 +15,28 @@ class TermsController extends BaseController
 		$this->data['page']['categories'] = json_decode($this->CategoriesModel->get(), true);
 		switch ($slug) {
 			case 'eligibility-criteria':
-				// $this->load->main_view('misc/terms', $this->data);
-				redirect(base_url('assets/uploads/amazing-indians-2024-eligibility.docx'));
+				if ($this->input->get("mode") == "view") {
+					$this->data['page']['title'] = "Eligibility Criteria" . " • " . APP_NAME;
+					$this->load->main_view('misc/eligibility', $this->data);
+				} else {
+					redirect(base_url('assets/uploads/2026/terms-and-conditions.pdf'));
+				}
 				break;
 			case 'rules-and-regulations':
+				redirect(base_url('assets/uploads/2026/terms-and-conditions.pdf'));
+				// $this->load->main_view('misc/terms', $this->data);
+				break;
+			case 'sample-application':
+				redirect(base_url('assets/uploads/2025/sample-application-2025.pdf'));
 				// $this->load->main_view('misc/terms', $this->data);
 				break;
 			case 'terms-and-conditions':
-				redirect(base_url('assets/uploads/amazing-indians-2024-terms-conditions.pdf'));
-				// $this->load->main_view('misc/terms', $this->data);
+				if ($this->input->get("mode") == "view") {
+					$this->data['page']['title'] = "Terms & Conditions" . " • " . APP_NAME;
+					$this->load->main_view('misc/terms', $this->data);
+				} else {
+					redirect(base_url('assets/uploads/2026/terms-and-conditions.pdf'));
+				}
 				break;
 
 			default:

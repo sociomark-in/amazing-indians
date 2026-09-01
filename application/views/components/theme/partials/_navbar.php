@@ -11,6 +11,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#about") ?>">About</a>
 				</li>
+				<li class="nav-item d-none">
+					<a class="nav-link" href="<?= base_url("#agenda") ?>">Agenda</a>
+				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						The Awards
@@ -37,7 +40,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#quotes") ?>">Inspirations</a>
 				</li>
-				<li class="nav-item d-none">
+				<li class="nav-item">
 					<a class="nav-link" href="<?= base_url("#gallery") ?>">Gallery</a>
 				</li>
 				<li class="nav-item">
@@ -59,11 +62,11 @@
 					<a class="nav-link" href="<?= base_url("#partners") ?>">Partners</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav">
+			<!-- <ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="btn btn-pink btn-hover-gold" href="<?= base_url('register-now') ?>">Submit Entry</a>
+					<a class="btn btn-pink btn-hover-gold disabled" href="<?= base_url('register-now') ?>">Registration Closed</a>
 				</li>
-			</ul>
+			</ul> -->
 		</div>
 		<a class="navbar-brand d-none d-lg-block" href="https://www.timesnownews.com/" target="_blank">
 			<img src="<?= base_url("assets/media/logos/") ?>times-white.png" alt="Times Logo" height="50">

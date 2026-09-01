@@ -85,6 +85,41 @@ class MainController extends BaseController
 				'author' => "Pramod Kulkarni",
 				'thumb' => "https://static.tnn.in/thumb/msid-111954745,thumbsize-17376,width-1280,height-720,resizemode-75/111954745.jpg?quality=100",
 			],
+			[
+				'name' => "Changing Lives Through Compassion: Celebrating Dr. Sheilu Sreenivasan and Vijay Barse",
+				'url' => "https://www.timesnownews.com/india/changing-lives-through-compassion-celebrating-dr-sheilu-sreenivasan-and-vijay-barse-article-111988578",
+				'category' => "Slum",
+				'author' => "Dr. Sheilu Sreenivasan and Vijay Barse",
+				'thumb' => "https://static.tnn.in/thumb/msid-111988578,thumbsize-17376,width-1280,height-720,resizemode-75/111988578.jpg?quality=100",
+			],
+			[
+				'name' => "The Teenager Who Created a Haven for Stray Animals",
+				'url' => "https://www.timesnownews.com/india/the-teenager-who-created-a-haven-for-stray-animals-article-111991243",
+				'category' => "Animal Welfare",
+				'author' => "Sai Vignesh",
+				'thumb' => "https://static.tnn.in/thumb/msid-111991243,thumbsize-17376,width-1280,height-720,resizemode-75/111991243.jpg?quality=100",
+			],
+			[
+				'name' => "A man on a mission to let no one go hungry, a movement to mitigate hunger",
+				'url' => "https://www.timesnownews.com/india/a-man-on-a-mission-to-let-no-one-go-hungry-a-movement-to-mitigate-hunger-article-111991542",
+				'category' => "Food Management and Nutrition",
+				'author' => "Raj Kumar Bhatia",
+				'thumb' => "https://static.tnn.in/thumb/msid-111991542,thumbsize-17376,width-1280,height-720,resizemode-75/111991542.jpg?quality=100",
+			],
+			[
+				'name' => "How a beautician saved 5000 Adivasi women from trafficking",
+				'url' => "https://www.timesnownews.com/india/how-a-beautician-saved-5000-adivasi-women-from-trafficking-article-111991758",
+				'category' => "Girl Child and Women's empowerment",
+				'author' => "Sukla Debnath",
+				'thumb' => "https://static.tnn.in/thumb/msid-111991758,thumbsize-17376,width-1280,height-720,resizemode-75/111991758.jpg?quality=100",
+			],
+			[
+				'name' => "Empowering Northeast youth: Ex-IAS officer drives agricultural entrepreneurship revolution",
+				'url' => "https://www.timesnownews.com/india/empowering-northeast-youth-ex-ias-officer-drives-agricultural-entrepreneurship-revolution-article-111992034",
+				'category' => "Agriculture",
+				'author' => "Dr Jayakumar Karuppusamy",
+				'thumb' => "https://static.tnn.in/thumb/msid-111992034,thumbsize-17376,width-1280,height-720,resizemode-75/111992034.jpg?quality=100",
+			],
 			// [
 			// 	'name' => "",
 			// 	'url' => "",
@@ -107,6 +142,7 @@ class MainController extends BaseController
 			'Ustad-Amjad-Ali-Khan.jpg',
 		];
 		$this->data['page']['categories'] = json_decode($this->CategoriesModel->get(), true);
-		$this->load->main_view('index', $this->data);
+
+		$this->load->main_view('home', $this->data);
 	}
 }

@@ -1,24 +1,29 @@
 @import url("../fonts/helvetica-neue-webfont/style.css");
 
 $logo-height: 80px;
-$color-purple: #2f1c6b;
-$color-pink: #d700d0;
+$color-cream: #f8e0c8;
+$color-cream-dark: #a7713a;
+$color-blue: #194997;
+$color-red: #ea1f27;
 $color-gold: #ffae00;
 $color-white: #efedf7;
 $color-black: #1c1c1c;
 
 $colors: (
-	"purple": $color-purple,
-	"pink": $color-pink,
+	"primary": $color-cream,
+	"pink": $color-blue,
 	"gold": $color-gold,
+	"red": $color-red,
+	"blue": $color-blue,
 	"white": $color-white,
 	"black": $color-black,
 );
 
 @font-face {
 	font-family: "AcclaimExtrabold";
-	font-weight: 700;
-	src: url("../fonts/acclaimextrabold-2.eot") format("embedded-opentype"),
+	font-weight: 600;
+	src:
+		url("../fonts/acclaimextrabold-2.eot") format("embedded-opentype"),
 		url("../fonts/acclaimextrabold-2.woff") format("woff"),
 		url("../fonts/acclaimextrabold-2.ttf") format("truetype");
 }
@@ -39,7 +44,7 @@ $colors: (
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: rgba($color-pink, 1);
+	background: rgba($color-blue, 1);
 }
 
 /* Handle on hover */
@@ -63,13 +68,12 @@ $colors: (
 
 body {
 	font-family: "Poppins", sans-serif;
-	background: linear-gradient(-90deg, $color-pink -50%, $color-purple 20%);
-	color: $color-white;
-}
-main {
-	background: url("../media/backgrounds/background.gif") no-repeat,
-		linear-gradient(-90deg, $color-pink -50%, $color-purple 20%);
+	color: $color-black;
+	background:
+		url("../media/backgrounds/background.gif") no-repeat,
+		$color-cream;
 	background-attachment: fixed;
+	background-size: cover;
 	background-blend-mode: overlay;
 	cursor: url("../media/images/icons/cursor-sm.png"), auto !important;
 }
@@ -82,6 +86,7 @@ h3 {
 	font-family: "AcclaimExtrabold";
 	text-transform: uppercase;
 	font-weight: 700;
+	color: $color-blue;
 }
 a {
 	text-decoration: none;
@@ -91,25 +96,25 @@ a {
 	cursor: pointer;
 }
 
-.swiper{
+.swiper {
 	.swiper-button-next,
-	.swiper-button-prev{
+	.swiper-button-prev {
 		top: 35%;
-		&::after{
-			content: '';
+		&::after {
+			content: "";
 			height: 2rem;
 			width: 2rem;
 			background-size: contain !important;
 			background-position: center !important;
 		}
 	}
-	.swiper-button-next{
-		&::after{
+	.swiper-button-next {
+		&::after {
 			background: url("../media/images/icons/right.png") no-repeat;
 		}
 	}
-	.swiper-button-prev{
-		&::after{
+	.swiper-button-prev {
+		&::after {
 			background: url("../media/images/icons/left.png") no-repeat;
 		}
 	}
@@ -122,13 +127,13 @@ form {
 	}
 	.form-check-input {
 		&:checked {
-			background-color: $color-pink;
-			border-color: $color-pink;
+			background-color: $color-blue;
+			border-color: $color-blue;
 		}
 		&:focus {
-			border-color: mix($color-white, $color-pink, 50%);
+			border-color: mix($color-white, $color-blue, 50%);
 			outline: 0;
-			box-shadow: 0 0 0 0.25rem rgba($color-pink, 0.25);
+			box-shadow: 0 0 0 0.25rem rgba($color-blue, 0.25);
 		}
 	}
 	label {
@@ -136,11 +141,19 @@ form {
 			color: $color-gold;
 		}
 	}
+	.form-text {
+		margin-top: 0.5rem;
+		display: block;
+		padding: 1rem;
+		border-radius: 0.25rem;
+		background-color: rgba($color-white, 0.1);
+		color: rgba($color-white, 0.5);
+	}
 }
 
 .navbar {
 	position: sticky;
-	background-color: $color-black;
+	background-color: $color-cream-dark;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -156,6 +169,11 @@ form {
 			}
 		}
 	}
+	.dropdown {
+		.dropdown-toggle::after {
+			color: $color-white;
+		}
+	}
 	.navbar-toggler {
 		--bs-navbar-toggler-border-color: #{$color-white};
 		--bs-border-width: 3px;
@@ -167,6 +185,10 @@ form {
 }
 
 .btn {
+	&[disabled] {
+		pointer-events: none;
+		opacity: 0.7;
+	}
 	&.btn-main {
 		position: relative;
 		&::before {
@@ -207,36 +229,36 @@ form {
 	&.btn-pink {
 		--bs-btn-color: #fff;
 		--bs-btn-style-color: #fff;
-		--bs-btn-bg: #{$color-pink};
-		--bs-btn-border-color: #{$color-pink};
+		--bs-btn-bg: #{$color-blue};
+		--bs-btn-border-color: #{$color-blue};
 		--bs-btn-hover-color: #fff;
-		--bs-btn-hover-bg: #{$color-pink};
-		--bs-btn-hover-border-color: #{$color-pink};
+		--bs-btn-hover-bg: #{$color-blue};
+		--bs-btn-hover-border-color: #{$color-blue};
 		--bs-btn-focus-shadow-rgb: 49, 132, 253;
 		--bs-btn-active-color: #fff;
-		--bs-btn-active-bg: #{$color-pink};
-		--bs-btn-active-border-color: #{$color-pink};
+		--bs-btn-active-bg: #{$color-blue};
+		--bs-btn-active-border-color: #{$color-blue};
 		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
 		--bs-btn-disabled-color: #fff;
-		--bs-btn-disabled-bg: #{$color-pink};
-		--bs-btn-disabled-border-color: #{$color-pink};
+		--bs-btn-disabled-bg: #{$color-blue};
+		--bs-btn-disabled-border-color: #{$color-blue};
 	}
 	&.btn-purple {
 		--bs-btn-color: #fff;
-		--bs-btn-style-color: #{$color-gold};
-		--bs-btn-bg: #{$color-purple};
-		--bs-btn-border-color: #{$color-purple};
+		--bs-btn-style-color: #{$color-cream};
+		--bs-btn-bg: #{$color-cream};
+		--bs-btn-border-color: #{$color-cream};
 		--bs-btn-hover-color: #fff;
-		--bs-btn-hover-bg: #{$color-purple};
-		--bs-btn-hover-border-color: #{$color-purple};
+		--bs-btn-hover-bg: #{$color-cream};
+		--bs-btn-hover-border-color: #{$color-cream};
 		--bs-btn-focus-shadow-rgb: 49, 132, 253;
 		--bs-btn-active-color: #fff;
-		--bs-btn-active-bg: #{$color-purple};
-		--bs-btn-active-border-color: #{$color-purple};
+		--bs-btn-active-bg: #{$color-cream};
+		--bs-btn-active-border-color: #{$color-cream};
 		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
 		--bs-btn-disabled-color: #fff;
-		--bs-btn-disabled-bg: #{$color-purple};
-		--bs-btn-disabled-border-color: #{$color-purple};
+		--bs-btn-disabled-bg: #{$color-cream};
+		--bs-btn-disabled-border-color: #{$color-cream};
 	}
 	&.btn-gold {
 		--bs-btn-color: #{$color-black};
@@ -244,16 +266,16 @@ form {
 		--bs-btn-bg: #{$color-gold};
 		--bs-btn-border-color: #{$color-gold};
 		--bs-btn-hover-color: #{$color-black};
-		--bs-btn-hover-bg: #{$color-gold};
-		--bs-btn-hover-border-color: #{$color-gold};
+		--bs-btn-hover-bg: #{darken($color-gold, 10)};
+		--bs-btn-hover-border-color: #{darken($color-gold, 10)};
 		--bs-btn-focus-shadow-rgb: 49, 132, 253;
 		--bs-btn-active-color: #{$color-black};
-		--bs-btn-active-bg: #{$color-gold};
-		--bs-btn-active-border-color: #{$color-gold};
+		--bs-btn-active-bg: #{darken($color-gold, 10)};
+		--bs-btn-active-border-color: #{darken($color-gold, 10)};
 		--bs-btn-active-shadow: inset 0 3px 5px rgba(255, 255, 255, 0.125);
 		--bs-btn-disabled-color: #{$color-black};
-		--bs-btn-disabled-bg: #{$color-gold};
-		--bs-btn-disabled-border-color: #{$color-gold};
+		--bs-btn-disabled-bg: #{darken($color-gold, 10)};
+		--bs-btn-disabled-border-color: #{darken($color-gold, 10)};
 	}
 	&.btn-hover-gold {
 		--bs-btn-hover-color: #{$color-black};
@@ -338,13 +360,13 @@ form {
 }
 .dropdown {
 	.dropdown-toggle::after {
-		color: $color-pink;
+		color: $color-blue;
 	}
 	.dropdown-toggle.show::after {
 		color: $color-gold;
 	}
 	.dropdown-menu {
-		--bs-dropdown-link-active-bg: #{$color-pink};
+		--bs-dropdown-link-active-bg: #{$color-blue};
 		border-radius: 0;
 		&[data-bs-popper] {
 			top: calc(100% + 0.8rem);
@@ -352,34 +374,42 @@ form {
 	}
 }
 .card-plain {
-	border: 3px solid $color-gold;
+	border: 3px solid $color-blue;
 	padding: 0.5rem;
 	border-radius: 1rem;
 	color: $color-black;
 	.card-body {
 		padding: 1rem;
-		background-color: $color-white;
+		background-color: $color-black;
 		border-radius: 0.5rem;
 	}
-	&.category-tile{
-		color: $color-white;
+	&.form-tile {
+		padding: 0;
+		color: $color-black;
+		.card-body {
+			padding: 2rem;
+			background-color: rgba($color-black, $alpha: 0.4);
+		}
+	}
+	&.category-tile {
+		color: $color-black;
 		padding: 0;
 		border: 3px solid transparent;
-		&:hover{
-			border-color: $color-gold;
+		&:hover {
+			border-color: $color-red;
 		}
-		.icon{
+		.icon {
 			width: 100px;
 			aspect-ratio: 1;
 			border-radius: 50%;
 			overflow: hidden;
-			img{
+			img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
 			}
 		}
-		.card-body{
+		.card-body {
 			background-color: rgba($color-black, $alpha: 0.4);
 		}
 	}
@@ -387,9 +417,9 @@ form {
 .scrollTo {
 	position: fixed;
 	z-index: 99;
-	bottom: 1rem;
+	bottom: 10%;
 	right: 1rem;
-	background-color: $color-pink;
+	background-color: $color-blue;
 	border-radius: 3rem;
 	padding-left: 1rem;
 	#scrollToTop {
@@ -405,16 +435,60 @@ form {
 	}
 }
 
+@keyframes pulse-animation {
+	0% {
+		box-shadow: 0 0 0 0px rgba(255, 0, 0, 0.5);
+	}
+	100% {
+		box-shadow: 0 0 0 0.5rem transparent;
+	}
+}
+.live-badge {
+	display: block;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: red;
+	&.pulse {
+		animation: pulse-animation 2s infinite;
+	}
+}
+
+.red-railing{
+	height: 100px;
+	background-image: var(--footer-bg);
+	background-repeat: repeat-x;
+	background-size: contain;
+	@media screen and (min-width: 768px) {
+		height: 200px;
+	}
+}
+
 .post-content {
+	color: rgba($color-white, 1);
 	a {
-		color: $color-gold;
+		color: rgba($color-gold, 1);
 	}
 	&.misc {
-		font-size: 0.9rem;
+		* {
+			font-size: 13px;
+		}
 		ol {
-			margin-bottom: 1rem;
+			margin-bottom: 1.5rem;
 			li {
-				margin-bottom: 0.5rem;
+				& > ol {
+					padding-left: 1rem;
+				}
+				margin-bottom: 1rem;
+				&:has(h5) {
+					&::marker {
+						font-size: 1.2rem;
+					}
+					h5 {
+						font-size: 1.2rem;
+						margin-bottom: 1rem;
+					}
+				}
 			}
 		}
 		table {
@@ -424,7 +498,7 @@ form {
 		table,
 		th,
 		td {
-			border: 1px solid $color-white;
+			border: 1px solid rgba($color-white, 1);
 			border-collapse: collapse;
 		}
 		th,
@@ -435,8 +509,16 @@ form {
 }
 
 .footer {
+	font-size: 14px !important;
 	background-color: $color-black;
+	color: $color-white;
 }
+.partners-nav {
+	.nav-link p {
+		font-size: 14px !important;
+	}
+}
+
 .fullscreen {
 	height: calc(100vh - $logo-height);
 	width: 100%;
@@ -461,6 +543,20 @@ form {
 		background-color: $color !important;
 	}
 }
+
+/* Summernote CSS */
+.note-editor {
+	font-family: "Poppins", sans-serif !important;
+	background-color: #fff;
+	h1,
+	h2,
+	h3 {
+		font-family: "Poppins", sans-serif !important;
+		font-size: 1.4rem;
+		text-transform: none;
+	}
+}
+/* Summernote CSS */
 
 .section {
 	padding: calc(max(5%, 2rem)) 0;
@@ -525,7 +621,7 @@ form {
 	display: block;
 	border-radius: 1.2rem;
 	&:hover {
-		border-color: $color-pink;
+		border-color: $color-blue;
 	}
 }
 .speaker-tile {
@@ -554,7 +650,7 @@ form {
 			z-index: 1;
 			width: 100%;
 			height: 60%;
-			background: linear-gradient(197deg, $color-gold 59%, #ff3100 100%);
+			background: $color-red;
 			clip-path: polygon(100% 30%, 0% 100%, 100% 100%);
 			left: 0;
 			bottom: 0;
@@ -564,16 +660,17 @@ form {
 	}
 	&.interactable {
 		&:hover {
-			box-shadow: 0 0.25rem 0 0 $color-pink;
+			box-shadow: 0 0.25rem 0 0 $color-blue;
 		}
 	}
-	h5 {
-		font-size: 1.2rem;
+	h4 {
+		font-size: 1.3rem;
 	}
 	p {
-		font-size: 1rem;
+		font-size: 0.8rem;
 	}
 }
+
 .gallery-masonry {
 	width: 100%;
 	columns: 2;
@@ -610,8 +707,9 @@ form {
 		position: absolute;
 		width: 17%;
 		aspect-ratio: 1;
-		left: 0;
-		top: 0;
+		left: 0%;
+		top: 17%;
+		z-index: -1;
 		background: url("../media/logos/chakri.png") no-repeat;
 		background-position: center;
 		background-size: contain;
@@ -623,7 +721,6 @@ h2 {
 		text-align: center;
 		font-family: "Gobold";
 		font-weight: 400;
-		// font-size: calc(max(, 2vw));
 		font-size: 2.5rem;
 	}
 }
@@ -648,5 +745,74 @@ h2 {
 	}
 	.text-content {
 		margin-bottom: 2rem;
+	}
+}
+
+.staged_process__wrapper {
+	.stage__tile {
+		position: relative;
+		&::after,
+		&:before {
+		}
+		.stage__title {
+			color: lighten($color-black, $amount: 30);
+			margin-bottom: 1rem;
+		}
+		.stage__details {
+			min-height: 100px;
+			border: none;
+			border-radius: 0.25rem;
+			color: lighten($color-black, $amount: 30);
+			&.card {
+				background-color: rgba($color-black, $alpha: 0.4);
+			}
+			.stage__content {
+				.icon {
+					img {
+						filter: grayscale(1);
+					}
+				}
+			}
+			h5 {
+				font-size: 1rem;
+				font-weight: 600;
+			}
+			p {
+				font-size: 0.8rem;
+			}
+		}
+		&.active {
+			.card,
+			.card-body {
+				background-color: $color-black;
+			}
+			.stage__title {
+				color: $color-blue;
+				h5 {
+					font-weight: 600;
+				}
+			}
+			.stage__details {
+				.stage__content {
+					.icon {
+						img {
+							filter: grayscale(0) hue-rotate(-45deg);
+						}
+					}
+				}
+				box-shadow: 0 0 0 2px $color-blue;
+				color: $color-black;
+				// background: linear-gradient(
+				// 	45deg,
+				// 	rgba($color-red, 0.3) 0%,
+				// 	transparent 100%
+				// );
+				h5 {
+					color: $color-blue;
+				}
+				p {
+				}
+			}
+		}
 	}
 }

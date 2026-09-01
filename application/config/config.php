@@ -23,9 +23,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://www.theamazingindians.com/';
-$config['base_url'] = 'https://test.apogeedigitech.in/times/amazing-indians/';
+
+// $config['base_url'] = 'https://www.theamazingindians.com/';
 $config['base_url'] = 'http://localhost/times-now/amazing-indians/';
+// $config['base_url'] = 'https://test.apogeedigitech.in/times/amazing-indians-2025/';
 
 /*
 |--------------------------------------------------------------------------

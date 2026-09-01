@@ -2,7 +2,7 @@
 	<section class="section">
 		<div class="container">
 		<div class="title section-title mb-3 mb-md-4">
-				<p class="">Amazing Indians</p>
+				<p class="">Amazing Indians <?= date('Y') ?></p>
 				<h2 class="">Terms & Conditions</h2>
 			</div>
 			<div class="post-content misc">
@@ -12,7 +12,7 @@
 						<table>
 							<tr>
 								<td>Awards</td>
-								<td>Amazing Indians 2024</td>
+								<td>Amazing Indians <?= date('Y') ?></td>
 							</tr>
 							<tr>
 								<td>Awards Management</td>
@@ -36,7 +36,7 @@
 							</tr>
 							<tr>
 								<td>Website and its T&C & Privacy</td>
-								<td><a href="<?= base_url() ?>"><strong>(www.theamazingindians.com)</strong></a></td>
+								<td><a target="_blank" href="<?= base_url() ?>">(www.theamazingindians.com)</a></td>
 							</tr>
 						</table>
 						<ol>
@@ -80,7 +80,7 @@
 						<ol>
 							<li>Participant applying in categories under individual segment, must be a citizen of India.</li>
 							<li>Individual should not be backed by a corporate body directly but an individual working in a Not-for-profit organization that is backed by a corporate body can apply and must provide an acknowledgment letter from the NGO, references, or beneficiaries for the contributions mentioned in the application.</li>
-							<li>The initiative/story mentioned in the case study section should have been in execution and the impact must fall in the period of April 01, 2023, to March 31, 2024. This should be evidenced through supporting documents and testimonials.</li>
+							<li>The initiative/story mentioned in the case study section should have been in execution and the impact must fall in the period of April 01, 2024, to March 31, 2025. This should be evidenced through supporting documents and testimonials.</li>
 							<li>In case we found duplicate submissions for the same initiative from multiple participants, the management will make the final decision on how to proceed.</li>
 							<li>The key initiative applied for the Awards should be within the lawful and legal rights of Indian judiciary system and must have benefitted India, or a community in India.</li>
 							<li>On-going initiatives that were initiated in the eligibility period will be accepted only if significant impact is demonstrated and submitted in the application form</li>
@@ -90,7 +90,7 @@
 							<li>The Jury holds the right to disqualify any application which does not meet the eligibility criteria without assigning any reason whatsoever. Jury’s decisions are final and binding on all Participants and cannot be challenged in any manner whatsoever.</li>
 							<li>The Awards Management may modify the eligibility criteria from time to time with retrospective effect, without prior written notification</li>
 							<li>Employees of BCCL, sponsors and partners of the Awards are not allowed to participate in the Awards</li>
-							<li>Participation in the Awards is subject to defined Terms and Conditions available on website <a href="<?= base_url() ?>">www.theamazingindians.com</a></li>
+							<li>Participation in the Awards is subject to defined Terms and Conditions available on website <a target="_blank" href="<?= base_url() ?>">www.theamazingindians.com</a></li>
 							<li>The Award categories may be changed / modified / split / merged / increased or cancelled by the Awards Management and / or Jury based on the number of entries received in any category, and the quality of the entries. The decision in this regard will be final, non-contestable and binding on all participants. The Awards management will not entertain any queries in this regard</li>
 						</ol>
 					</li>
@@ -111,15 +111,15 @@
 					<li>
 						<h5>Call for entries and participation</h5>
 						<ol>
-							<li>Applicant can apply for the Awards by submitting the completed application form on the website (<a href="<?= base_url() ?>">www.theamazingindians.com</a>)</li>
+							<li>Applicant can apply for the Awards by submitting the completed application form on the website (<a target="_blank" href="<?= base_url() ?>">www.theamazingindians.com</a>)</li>
 							<li>The Jury has right to reclassify Application Forms from one award category to another, at its discretion. This is not contestable in any manner.</li>
 						</ol>
 					</li>
 					<li>
 						<h5>Receipt of entries</h5>
 						<ol>
-							<li>A participant can apply for the Awards by logging on to www.theamazingindians.com and filling the application form online and attach the supporting documents along with the application form directly on the website</li>
-							<li>Last date for receiving completed application forms is 11:59 PM IST on July 20, 2024</li>
+							<li>A participant can apply for the Awards by logging on to <a target="_blank" href="<?= base_url() ?>">www.theamazingindians.com</a> and filling the application form online and attach the supporting documents along with the application form directly on the website</li>
+							<li>Last date for receiving completed application forms is 11:59 PM IST on July 12, 2025</li>
 							<li>Receipt of application forms after last date of receipt specified may be permitted only at the discretion of the Awards Management</li>
 							<li>Awards Management will not be responsible for application forms that are received in an incorrect format / late / corrupt file etc.</li>
 						</ol>
@@ -131,6 +131,7 @@
 							<li>The Awards Management reserves the right to offer or withdraw any of the awards/rewards/gratification as provided herein, at any point of time, including after they have been announced.</li>
 							<li>Awards Management shall have the liberty, but not the obligation, to publish information with respect to the submission made by the participants.</li>
 							<li>Participants declare that the details furnished in the application form and supporting documents submitted for the awards are true, correct and complete and, wherever required, provided after thorough due diligence and inquiry. In case any of the said information is found to be false or untrue or misleading or misrepresenting, the participant will be liable and accountable for any consequences resulting thereto including indemnifying the Awards Management for any expenses, costs, losses, damages incurred.</li>
+							<li>Participants who do not comply with the theme of the awards and who have been well recognized on both national and international platforms will not be considered further in the awards at the discretion of the jury members and awards management</li>
 							<li>The Participant authorizes the Awards Management to use the content submitted as part of my/our nomination/ participation, in whole or in part and use and display such content and entry, which shall include trade publications, press releases, electronic or social media posting to any website, electronic hyperlinks to the website of the Participant, and/or any other display format selected by the Awards Management during the awards ceremony or at a later point in time as it may deem fit.</li>
 							<li>The Awards Management may, in its sole discretion, exclude a participant from participating in any part of the Awards on various grounds, which may include without limitation (i) circumstances which renders the participant unfit to participate therein; (ii) inability to produce documentation specified proving the identity of the participant; (iii) any other reason that, at their sole discretion, would adversely impact the Award. At no point of time will the Awards Management be obliged to notify unsuccessful Participants of its decision</li>
 							<li>The Awards Management is not responsible if contact cannot be established with a shortlist via email or phone due to reasons not in the control of the Awards Management. </li>
@@ -174,15 +175,15 @@
 							<table>
 								<tr>
 									<td>Submision Opening</td>
-									<td><?= date("jS F Y", strtotime($this->EVENTS['opening'])) ?></td>
+									<td><?= ($this->EVENTS['opening'] != "0000-00-00")? date("jS F Y", strtotime($this->EVENTS['opening'])) : "To be announced" ?></td>
 								</tr>
 								<tr>
 									<td>Submision Deadline</td>
-									<td><?= date("jS F Y", strtotime($this->EVENTS['deadline'])) ?></td>
+									<td><?= ($this->EVENTS['deadline'] != "0000-00-00")? date("jS F Y", strtotime($this->EVENTS['deadline']))  : "To be announced"?></td>
 								</tr>
 								<tr>
 									<td>Awards Ceremony</td>
-									<td><?= date("jS F Y", strtotime($this->EVENTS['awards'])) ?></td>
+									<td><?= ($this->EVENTS['awards'] != "0000-00-00")? date("jS F Y", strtotime($this->EVENTS['awards'])) : "To be announced"?></td>
 								</tr>
 							</table>
 							<figcaption>Tentative</figcaption>
@@ -217,7 +218,7 @@
 					<li>
 						<h5>Website</h5>
 						<ol>
-							<li>The website is only an informational website <a href="<?= base_url() ?>">www.theamazingindians.com</a> (the “Website”) for the Awards. The Awards Management is not liable or responsible for any action or decision taken by Participant or anyone acting on Participant’s behalf or under Participant employment or under contract with Participant. The Awards Management shall not be under any obligation to Participant and Participant shall have no obligation or rights in relation to the Awards and shall have no claims whatsoever against the Awards Management relating to the selection process or the running of the Awards</li>
+							<li>The website is only an informational website <a target="_blank" href="<?= base_url() ?>">www.theamazingindians.com</a> (the “Website”) for the Awards. The Awards Management is not liable or responsible for any action or decision taken by Participant or anyone acting on Participant’s behalf or under Participant employment or under contract with Participant. The Awards Management shall not be under any obligation to Participant and Participant shall have no obligation or rights in relation to the Awards and shall have no claims whatsoever against the Awards Management relating to the selection process or the running of the Awards</li>
 							<li>
 								<p>The Awards Management shall not be responsible for:</p>
 								<ol>

@@ -9,9 +9,9 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 
 <head>
-	<?php $this->load->view('components/theme/_head'); ?>
+	<?php $this->load->view('components/_head'); ?>
 	<title><?= (isset($page['title'])) ? $page['title'] : $CLIENT_NAME ?></title>
 </head>
 
 <body>
-	<?php $this->load->view('components/theme/partials/_navbar'); ?>
+	<?php $this->load->view('components/partials/_navbar'); ?>

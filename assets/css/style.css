@@ -867,6 +867,13 @@ h2.hero-text {
   margin-bottom: 2rem;
 }
 
+#info {
+  background: url("../media/backgrounds/green.png"), url("../media/backgrounds/orange.png");
+  background-repeat: no-repeat;
+  background-position: bottom right, bottom left;
+  background-size: auto 50%;
+}
+
 .staged_process__wrapper .stage__tile {
   position: relative;
 }
